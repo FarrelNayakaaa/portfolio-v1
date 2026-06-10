@@ -24,14 +24,15 @@ const About = () => {
                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="space-y-2 font-mono text-sm text-gray-400">
-                    <p><span className="text-purple-400">const</span> <span className="text-blue-400">profile</span> = &#123;</p>
-                    <p className="pl-4">name: <span className="text-green-400">"{aboutDetails.university}"</span>,</p>
-                    <p className="pl-4">role: <span className="text-green-400">"UI/UX & Frontend"</span>,</p>
-                    <p className="pl-4">gpa: <span className="text-orange-400">"{aboutDetails.gpa}"</span>,</p>
-                    <p className="pl-4">traits: [<span className="text-green-400">"Creative"</span>, <span className="text-green-400">"Detail-oriented"</span>]</p>
-                    <p>&#125;;</p>
-                </div>
+                // Di dalam file About.jsx (Bagian mockup code snippet sebelah kiri)
+              <div className="space-y-2 font-mono text-sm text-gray-400">
+                  <p><span className="text-purple-400">const</span> <span className="text-blue-400">profile</span> = &#123;</p>
+                  <p className="pl-4">name: <span className="text-green-400">"{aboutDetails.university}"</span>,</p>
+                  <p className="pl-4">role: <span className="text-green-400">"PM & Full-Stack"</span>,</p> 
+                  <p className="pl-4">gpa: <span className="text-orange-400">"{aboutDetails.gpa}"</span>,</p>
+                  <p className="pl-4">traits: [<span className="text-green-400">"Agile"</span>, <span className="text-green-400">"Solution-oriented"</span>]</p>
+                  <p>&#125;;</p>
+              </div>
             </div>
           </motion.div>
 
