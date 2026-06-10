@@ -1,37 +1,37 @@
-// src/content.js
-import { FaGithub, FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa";
-import { SiKotlin, SiJavascript, SiHtml5, SiCss3, SiFigma, SiReact, SiJira, SiTrello, SiNotion, SiAndroid } from "react-icons/si";
-import { MdDesignServices } from "react-icons/md";
+// src/content.jsx
+import { FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaRust } from "react-icons/fa";
+import { SiKotlin, SiJavascript, SiHtml5, SiCss3, SiFigma, SiReact, SiJira, SiTrello, SiNotion, SiAndroid, SiPostgresql, SiPostman, SiMongodb } from "react-icons/si";
+import { MdDesignServices, MdOutlineIntegrationInstructions } from "react-icons/md";
 
 export const heroDetails = {
   name: "Muhammad Farrel Nayaka",
   roles: [
-    "UI/UX Designer",
-    "Front-End Developer", 
-    "Product Designer",
-    "Visual Storyteller"
+    "Technical Project Manager",
+    "Full-Stack Developer", 
+    "Quality Assurance Specialist",
+    "Product Strategist"
   ],
-  tagline: "Bridging the gap between creative design and technical development.",
+  tagline: "Bridging the gap between robust engineering, efficient project management, and high-quality product delivery.",
 };
 
 export const aboutDetails = {
-  description: "I am a creative UI/UX Designer and Informatics student at Multimedia Nusantara University. I combine a strong eye for visual aesthetics with technical proficiency in front-end technologies to craft intuitive user journeys and interactive prototypes. My goal is to design scalable, user-centric interfaces that solve complex real-world problems.",
+  description: "I am a Technical Project Manager and Full-Stack Developer with a strong foundation in Quality Assurance. Currently an Informatics student at Multimedia Nusantara University, I bridge the gap between technical execution and business requirements. Experienced in managing cross-functional teams, building automation workflows, and managing Web3 and enterprise projects, I focus on delivering scalable, high-performance digital solutions.",
   university: "Multimedia Nusantara University",
   gpa: "3.65/4.0",
 };
 
 export const skills = [
-  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
-  { name: "UI/UX", icon: <MdDesignServices className="text-purple-400" /> },
+  { name: "Project Management", icon: <SiJira className="text-blue-600" /> },
   { name: "React", icon: <SiReact className="text-cyan-400" /> },
+  { name: "Rust", icon: <FaRust className="text-orange-400" /> },
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-  { name: "HTML5", icon: <SiHtml5 className="text-orange-500" /> },
-  { name: "CSS3", icon: <SiCss3 className="text-blue-500" /> },
-  { name: "Kotlin", icon: <SiKotlin className="text-purple-600" /> },
-  { name: "Android", icon: <SiAndroid className="text-green-500" /> },
-  { name: "Jira", icon: <SiJira className="text-blue-600" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+  { name: "Jira & Agile", icon: <SiJira className="text-blue-600" /> },
+  { name: "Quality Assurance", icon: <MdOutlineIntegrationInstructions className="text-emerald-400" /> },
+  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
   { name: "Trello", icon: <SiTrello className="text-blue-400" /> },
-  { name: "Notion", icon: <SiNotion className="text-white" /> },
 ];
 
 export const projects = [
@@ -62,6 +62,18 @@ export const projects = [
 ];
 
 export const experience = [
+  {
+    role: "Project Manager",
+    company: "Waverly Team",
+    period: "Apr 2026 - Present",
+    desc: "Spearheading end-to-end project management for a Web3 hackathon and platform development. Defining product scope, orchestrating milestones, and bridging communication gaps between smart contract engineers and frontend developers to ensure a seamless platform launch.",
+  },
+  {
+    role: "Quality Assurance Intern",
+    company: "PT Global Loyalty Indonesia",
+    period: "Jan 2026 - Present",
+    desc: "Driving QA operations for the 'My Lawson Revamp' mobile application. Architecting comprehensive test suites using Qase.io and Jira. Conducting backend API testing, validation utilizing Postman, DBeaver, MongoDB, and Redis Insight, and overseeing build distributions through TestFlight.",
+  },
   {
     role: "Technical Project Manager",
     company: "Starlight 2025",
