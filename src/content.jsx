@@ -36,11 +36,11 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Waverly Platform (Web3 Hackathon)",
-    description: "Leading the end-to-end development of a Web3 competition platform. Managing product architecture, setting development milestones, and aligning smart contract integration with frontend systems.",
-    tech: ["Project Management", "Web3", "React", "Rust", "Agile"],
-    link: "", // Dikosongkan karena belum publish
-  },
+      title: "Waverly Platform (TEKNOFEST Turkey Web3 Hackathon)",
+      description: "Leading the end-to-end development of a Web3 platform tailored for the prestigious TEKNOFEST competition in Turkey. Managing product architecture, setting development milestones, and aligning smart contract integration with frontend systems.",
+      tech: ["Project Management", "Web3", "React", "Rust", "Agile"],
+      link: "", 
+    },
   {
     title: "Virtual Try-On App",
     description: "Designed the end-to-end UX flow for a virtual fitting room app. Created high-fidelity mockups in Figma and conducted usability testing to minimize checkout friction.",
