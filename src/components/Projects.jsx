@@ -18,22 +18,22 @@ const Projects = () => {
           <p className="text-gray-400">Some cool stuff I've built recently.</p>
         </motion.div>
 
+        {/* Menggunakan flex-wrap dan justify-center agar item ganjil otomatis di tengah */}
         <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ 
-                    y: -10, 
-                    rotate: 1,
-                    transition: { type: "spring", stiffness: 300 } 
-                  }}
-                  {/* TAMBAHKAN CLASS LEBAR DI SINI */}
-                  className="w-full md:w-[calc(50%-1rem)] bg-[#1a1f2e] border border-white/10 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all group"
-                >
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ 
+                y: -10, 
+                rotate: 1,
+                transition: { type: "spring", stiffness: 300 } 
+              }}
+              className="w-full md:w-[calc(50%-1rem)] bg-[#1a1f2e] border border-white/10 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all group"
+            >
               {/* Fake Browser Header / Image Placeholder */}
               <div className={`h-48 w-full bg-gradient-to-br ${getGradient(index)} p-6 relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
                 <div className="absolute top-4 left-4 flex gap-2">
@@ -64,15 +64,22 @@ const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    {/* UPDATED BUTTON HERE */}
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="flex items-center gap-2 text-sm font-bold text-white hover:text-primary transition-colors"
-                    >
-                        <FaExternalLinkAlt /> View Project
-                    </a>
+                    {/* Kondisi jika link tersedia atau masih dalam pengembangan */}
+                    {project.link ? (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="flex items-center gap-2 text-sm font-bold text-white hover:text-primary transition-colors"
+                      >
+                          <FaExternalLinkAlt /> View Project
+                      </a>
+                    ) : (
+                      <span className="flex items-center gap-2 text-sm font-semibold text-gray-500 cursor-not-allowed bg-white/5 px-3 py-1.5 rounded-xl border border-white/5">
+                          <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
+                          In Development
+                      </span>
+                    )}
                 </div>
               </div>
             </motion.div>
