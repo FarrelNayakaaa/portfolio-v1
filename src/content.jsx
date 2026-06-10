@@ -72,7 +72,7 @@ export const experience = [
     role: "Project Manager",
     company: "Waverly Team",
     period: "Apr 2026 - Present",
-    desc: "Spearheading end-to-end project management for a Web3 hackathon and platform development. Defining product scope, orchestrating milestones, and bridging communication gaps between smart contract engineers and frontend developers to ensure a seamless platform launch.",
+    desc: "Spearheading end-to-end project management for a Web3 platform developed for the TEKNOFEST hackathon in Turkey. Defining product scope, orchestrating development milestones, and bridging communication gaps between smart contract engineers and frontend developers to ensure a seamless platform launch under competitive timelines.",
   },
   {
     role: "Quality Assurance Intern",
