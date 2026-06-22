@@ -1,7 +1,8 @@
 // src/content.jsx
-import { FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaRust } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaRust, FaJava, FaPython } from "react-icons/fa";
 import { SiKotlin, SiJavascript, SiHtml5, SiCss3, SiFigma, SiReact, SiJira, SiTrello, SiNotion, SiAndroid, SiPostgresql, SiPostman, SiMongodb } from "react-icons/si";
 import { MdDesignServices, MdOutlineIntegrationInstructions } from "react-icons/md";
+import { TbDeviceMobileCode } from "react-icons/tb";
 
 export const heroDetails = {
   name: "Muhammad Farrel Nayaka",
@@ -21,17 +22,20 @@ export const aboutDetails = {
 };
 
 export const skills = [
-  { name: "Project Management", icon: <SiJira className="text-blue-600" /> },
+  { name: "Quality Assurance", icon: <MdOutlineIntegrationInstructions className="text-emerald-400" /> },
+  { name: "Appium", icon: <TbDeviceMobileCode className="text-purple-400" /> },
+  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+  { name: "Java", icon: <FaJava className="text-red-500" /> },
+  { name: "Kotlin", icon: <SiKotlin className="text-indigo-500" /> },
+  { name: "Python", icon: <FaPython className="text-yellow-500" /> },
+  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
   { name: "React", icon: <SiReact className="text-cyan-400" /> },
   { name: "Rust", icon: <FaRust className="text-orange-400" /> },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
   { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
   { name: "Jira & Agile", icon: <SiJira className="text-blue-600" /> },
-  { name: "Quality Assurance", icon: <MdOutlineIntegrationInstructions className="text-emerald-400" /> },
-  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
   { name: "Trello", icon: <SiTrello className="text-blue-400" /> },
+  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
 ];
 
 export const projects = [
