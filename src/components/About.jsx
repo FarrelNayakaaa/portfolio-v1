@@ -51,7 +51,7 @@ const About = () => {
             
             <div className="p-4 bg-blue-500/10 border-l-4 border-blue-500 rounded-r-lg">
                 <p className="text-blue-300 italic">
-                    "Design is not just what it looks like and feels like. Design is how it works."
+                    "Great design isn't just about the interface; it's about the seamless orchestration of code, logic, and user experience."
                 </p>
             </div>
           </motion.div>
