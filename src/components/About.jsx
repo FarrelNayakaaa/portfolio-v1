@@ -24,7 +24,6 @@ const About = () => {
                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                // Di dalam file About.jsx (Bagian mockup code snippet sebelah kiri)
               <div className="space-y-2 font-mono text-sm text-gray-400">
                   <p><span className="text-purple-400">const</span> <span className="text-blue-400">profile</span> = &#123;</p>
                   <p className="pl-4">name: <span className="text-green-400">"{aboutDetails.university}"</span>,</p>
