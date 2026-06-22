@@ -18,7 +18,7 @@ export const heroDetails = {
 export const aboutDetails = {
   description: "I am a Technical Project Manager and Full-Stack Developer with a strong foundation in Quality Assurance. Currently an Informatics student at Multimedia Nusantara University, I bridge the gap between technical execution and business requirements. Experienced in managing cross-functional teams, building automation workflows, and managing Web3 and enterprise projects, I focus on delivering scalable, high-performance digital solutions.",
   university: "Multimedia Nusantara University",
-  gpa: "3.65/4.0",
+  gpa: "3.73/4.0",
 };
 
 export const skills = [
