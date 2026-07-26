@@ -1,106 +1,86 @@
-// src/content.jsx
-import { FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaRust, FaJava, FaPython } from "react-icons/fa";
-import { SiKotlin, SiJavascript, SiHtml5, SiCss3, SiFigma, SiReact, SiJira, SiTrello, SiNotion, SiAndroid, SiPostgresql, SiPostman, SiMongodb } from "react-icons/si";
-import { MdDesignServices, MdOutlineIntegrationInstructions } from "react-icons/md";
-import { TbDeviceMobileCode } from "react-icons/tb";
-
-export const heroDetails = {
-  name: "Muhammad Farrel Nayaka",
-  roles: [
-    "Technical Project Manager",
-    "Full-Stack Developer", 
-    "Quality Assurance Specialist",
-    "Product Strategist"
-  ],
-  tagline: "Bridging the gap between robust engineering, efficient project management, and high-quality product delivery.",
-};
-
-export const aboutDetails = {
-  description: "I am a Technical Project Manager and Full-Stack Developer with a strong foundation in Quality Assurance. Currently an Informatics student at Multimedia Nusantara University, I bridge the gap between technical execution and business requirements. Experienced in managing cross-functional teams, building automation workflows, and managing Web3 and enterprise projects, I focus on delivering scalable, high-performance digital solutions.",
-  university: "Multimedia Nusantara University",
-  gpa: "3.73/4.0",
-};
-
-export const skills = [
-  { name: "Quality Assurance", icon: <MdOutlineIntegrationInstructions className="text-emerald-400" /> },
-  { name: "Appium", icon: <TbDeviceMobileCode className="text-purple-400" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-  { name: "Java", icon: <FaJava className="text-red-500" /> },
-  { name: "Kotlin", icon: <SiKotlin className="text-indigo-500" /> },
-  { name: "Python", icon: <FaPython className="text-yellow-500" /> },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-  { name: "React", icon: <SiReact className="text-cyan-400" /> },
-  { name: "Rust", icon: <FaRust className="text-orange-400" /> },
-  { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-  { name: "Jira & Agile", icon: <SiJira className="text-blue-600" /> },
-  { name: "Trello", icon: <SiTrello className="text-blue-400" /> },
-  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
-];
-
 export const projects = [
   {
-      title: "Waverly Platform (TEKNOFEST Turkey Web3 Hackathon)",
-      description: "Leading the end-to-end development of a Web3 platform tailored for the prestigious TEKNOFEST competition in Turkey. Managing product architecture, setting development milestones, and aligning smart contract integration with frontend systems.",
-      tech: ["Project Management", "Web3", "React", "Rust", "Agile"],
-      link: "", 
-    },
-  {
-    title: "Virtual Try-On App",
-    description: "Designed the end-to-end UX flow for a virtual fitting room app. Created high-fidelity mockups in Figma and conducted usability testing to minimize checkout friction.",
-    tech: ["Figma", "Prototyping", "UX Research"],
-    link: "https://tryon-nine.vercel.app/", 
+    title: "Waverly",
+    role: "Project Manager · Web3 Hackathon",
+    type: "electric",
+    typeLabel: "LEADERSHIP",
+    summary: "Leading a cross-functional team through a four-month build for the TEKNOFEST Turkey Web3 Hackathon, aligning frontend and smart-contract delivery.",
+    metrics: [{ value: "4", label: "team members" }, { value: "4 mo", label: "delivery cycle" }],
+    skills: ["Roadmapping", "Agile", "Web3", "Stakeholders"],
+    challenge: "Turn an ambitious Web3 concept into a competition-ready product under a fixed hackathon timeline.",
+    moves: ["Mapped scope & milestones", "Synced frontend and smart-contract work", "Tracked blockers through Agile rituals"],
+    outcome: "A four-person team stayed aligned through an active four-month delivery cycle toward the final round.",
+    link: "",
   },
   {
-    title: "Catch ME! (Survival Game)",
-    description: "Designed the Heads-Up Display (HUD) and main menu interfaces for a survival shooter game, prioritizing player immersion and information clarity.",
-    tech: ["Game UI", "Itch.io", "Visual Assets"],
-    link: "https://farrelnayakaa.itch.io/catch-me-u-idiot-creature",
-  },
-  {
-    title: "Starlight 2025 (Event Platform)",
-    description: "Product Designer & Developer for a ticket purchasing website. Mapped user journeys for event discovery and managed content layout for high readability.",
-    tech: ["UI Design", "Responsive Web", "User Flow"],
+    title: "Starlight 2025",
+    role: "Technical PM & Product Designer",
+    type: "water",
+    typeLabel: "DELIVERY",
+    summary: "Directed the product lifecycle of a live event platform—from stakeholder requirements and user journeys to responsive CRUD delivery.",
+    metrics: [{ value: "7", label: "people led" }, { value: "200+", label: "transactions" }],
+    skills: ["Product Strategy", "UX", "Database", "Delivery"],
+    challenge: "Ship a public ticketing platform that could support a live campus event and high-volume access.",
+    moves: ["Translated stakeholder needs", "Designed journeys and data flows", "Coordinated seven contributors"],
+    outcome: "The platform went live and supported more than 200 successful ticket transactions.",
     link: "https://starlightumn2025.com/",
   },
   {
-    title: "AntriDok (Clinic Queue)",
-    description: "Designed a clean, accessible mobile interface for patients to monitor queue status in real-time, focusing on accessibility for elderly users.",
-    tech: ["Mobile Design", "Accessibility", "App UI"],
-    link: "https://github.com/FarrelNayakaaa/AntriDokter.git",
-  }
+    title: "My Lawson Revamp",
+    role: "Quality Assurance Intern",
+    type: "grass",
+    typeLabel: "QUALITY",
+    summary: "Owned staging validation, test planning, API and database checks, regression cycles, and build distribution across two major releases.",
+    metrics: [{ value: "50–100", label: "test scenarios" }, { value: "50+", label: "bugs found" }],
+    skills: ["Qase", "Jira", "Postman", "TestFlight"],
+    challenge: "Protect release quality across mobile flows, APIs, databases, and a changing staging environment.",
+    moves: ["Built structured test suites", "Validated APIs and data", "Managed regression and build distribution"],
+    outcome: "Identified 50+ issues across two major releases while supporting staging readiness end to end.",
+    link: "",
+  },
+  {
+    title: "Virtual Try-On",
+    role: "Product Designer",
+    type: "psychic",
+    typeLabel: "RESEARCH",
+    summary: "Designed the complete fitting-room journey and high-fidelity interaction states, then tested the concept at a campus showcase.",
+    metrics: [{ value: "35+", label: "participants" }, { value: "1", label: "validated flow" }],
+    skills: ["Figma", "Prototyping", "Usability", "User Flow"],
+    challenge: "Make a virtual fitting-room concept intuitive enough for first-time users at a live showcase.",
+    moves: ["Mapped the full user journey", "Prototyped interaction states", "Observed real participant behavior"],
+    outcome: "Feedback from 35+ participants validated the core flow and exposed practical usability improvements.",
+    link: "https://tryon-nine.vercel.app/",
+  },
+  {
+    title: "AntriDok",
+    role: "Developer & Accessibility Designer",
+    type: "fire",
+    typeLabel: "ENGINEERING",
+    summary: "Co-developed a native clinic queue application with accessibility-first navigation tailored to elderly patients.",
+    metrics: [{ value: "3", label: "team members" }, { value: "1", label: "native app" }],
+    skills: ["Kotlin", "Mobile", "Accessibility", "Teamwork"],
+    challenge: "Simplify clinic queue monitoring for patients, including elderly users with accessibility needs.",
+    moves: ["Co-developed the native app", "Prioritized readable navigation", "Designed around real queue tasks"],
+    outcome: "Delivered a native Kotlin prototype with an accessibility-first patient experience.",
+    link: "https://github.com/FarrelNayakaaa/AntriDokter",
+  },
 ];
 
 export const experience = [
-  {
-    role: "Project Manager",
-    company: "Waverly Team",
-    period: "Apr 2026 - Present",
-    desc: "Spearheading end-to-end project management for a Web3 platform developed for the TEKNOFEST hackathon in Turkey. Defining product scope, orchestrating development milestones, and bridging communication gaps between smart contract engineers and frontend developers to ensure a seamless platform launch under competitive timelines.",
-  },
-  {
-    role: "Quality Assurance Intern",
-    company: "PT Global Loyalty Indonesia",
-    period: "Jan 2026 - Present",
-    desc: "Driving QA operations for the 'My Lawson Revamp' mobile application. Architecting comprehensive test suites using Qase.io and Jira. Conducting backend API testing, validation utilizing Postman, DBeaver, MongoDB, and Redis Insight, and overseeing build distributions through TestFlight.",
-  },
-  {
-    role: "Technical Project Manager",
-    company: "Starlight 2025",
-    period: "Feb 2025 - Nov 2025",
-    desc: "Led product design and development lifecycle, collaborating with stakeholders to define visual requirements and user flows.",
-  },
-  {
-    role: "Operating System Lab Assistant",
-    company: "Multimedia Nusantara University",
-    period: "Feb 2025 - July 2025",
-    desc: "Guided students through technical troubleshooting and fostered a user-first mindset in problem-solving.",
-  }
+  { role: "Project Manager", company: "Waverly Team · TEKNOFEST", period: "Apr 2026 — Present", description: "Leading product scope, milestones, and cross-functional alignment for a Web3 platform." },
+  { role: "Technical Project Manager & Product Designer", company: "Starlight 2025", period: "Jan 2026 — Present", description: "Leading a seven-person team from requirements through deployment for a live ticketing platform." },
+  { role: "Quality Assurance Intern", company: "PT Global Loyalty Indonesia", period: "Jan 2026 — Present", description: "Driving test planning, staging readiness, backend validation, and regression delivery for My Lawson Revamp." },
+  { role: "Operating System Lab Assistant", company: "Multimedia Nusantara University", period: "Feb 2025 — Jul 2025", description: "Mentored 70+ students through systems fundamentals, debugging, and technical problem-solving." },
+];
+
+export const skillGroups = [
+  { icon: "01", kicker: "CORE TYPE", title: "Project Leadership", skills: ["Technical PM", "Agile / Scrum", "Roadmapping", "Risk Management", "Stakeholder Alignment"] },
+  { icon: "02", kicker: "SUPPORT TYPE", title: "Quality & Product", skills: ["Test Planning", "API Testing", "UX Research", "Figma", "Accessibility"] },
+  { icon: "03", kicker: "TECH TYPE", title: "Engineering Fluency", skills: ["JavaScript", "React", "Kotlin", "Python", "PostgreSQL", "MongoDB"] },
 ];
 
 export const socialLinks = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/muhammad-farrel-87a776278", icon: <FaLinkedin /> },
-  { name: "GitHub", url: "https://github.com/FarrelNayakaaa", icon: <FaGithub /> },
-  { name: "Instagram", url: "https://www.instagram.com/farrelnayakaa/", icon: <FaInstagram /> },
-  { name: "Discord", url: "https://discordapp.com/users/481030811005616150", icon: <FaDiscord /> },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/muhammad-farrel-87a776278" },
+  { name: "GitHub", url: "https://github.com/FarrelNayakaaa" },
+  { name: "Instagram", url: "https://www.instagram.com/farrelnayakaa/" },
 ];
