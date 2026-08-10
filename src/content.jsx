@@ -68,8 +68,8 @@ export const projects = [
 
 export const experience = [
   { role: "Project Manager", company: "Waverly Team · TEKNOFEST", period: "Apr 2026 — Present", description: "Leading product scope, milestones, and cross-functional alignment for a Web3 platform." },
-  { role: "Technical Project Manager & Product Designer", company: "Starlight 2025", period: "Jan 2026 — Present", description: "Leading a seven-person team from requirements through deployment for a live ticketing platform." },
   { role: "Quality Assurance Intern", company: "PT Global Loyalty Indonesia", period: "Jan 2026 — Present", description: "Driving test planning, staging readiness, backend validation, and regression delivery for My Lawson Revamp." },
+  { role: "Technical Project Manager & Product Designer", company: "Starlight 2025", period: "Jan 2025 — Nov 2025", description: "Leading a seven-person team from requirements through deployment for a live ticketing platform." },
   { role: "Operating System Lab Assistant", company: "Multimedia Nusantara University", period: "Feb 2025 — Jul 2025", description: "Mentored 70+ students through systems fundamentals, debugging, and technical problem-solving." },
 ];
 
