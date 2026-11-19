@@ -496,17 +496,87 @@ function Contact() {
   );
 }
 
+function WelcomeScene({ onEnter }) {
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const skipWithEscape = (event) => {
+      if (event.key === "Escape") onEnter();
+    };
+    window.addEventListener("keydown", skipWithEscape);
+    return () => window.removeEventListener("keydown", skipWithEscape);
+  }, [onEnter]);
+
+  return (
+    <Motion.section
+      className="welcome-scene"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="welcome-title"
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, scale: 1.03 }}
+      transition={{ duration: .45 }}
+    >
+      <div className="welcome-grid" aria-hidden="true" />
+      <Motion.div
+        className="welcome-orbit welcome-orbit-one"
+        animate={reduceMotion ? {} : { rotate: 360 }}
+        transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+      />
+      <Motion.div
+        className="welcome-orbit welcome-orbit-two"
+        animate={reduceMotion ? {} : { rotate: -360 }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+      />
+      <div className="welcome-content">
+        <Motion.div
+          className="welcome-mascot"
+          initial={reduceMotion ? false : { opacity: 0, y: 56, scale: .82 }}
+          animate={{ opacity: 1, y: reduceMotion ? 0 : [0, -13, 0], scale: 1 }}
+          transition={reduceMotion ? { duration: .01 } : { opacity: { duration: .6, delay: .12 }, scale: { duration: .7, delay: .12, type: "spring" }, y: { duration: 3.6, delay: .9, repeat: Infinity, ease: "easeInOut" } }}
+        >
+          <img src={mascot} alt="Navi, Farrel's project quest companion" width="900" height="900" />
+        </Motion.div>
+        <Motion.div
+          className="welcome-copy"
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: .55, delay: .32 }}
+        >
+          <p>QUEST TERMINAL · ONLINE</p>
+          <h1 id="welcome-title">Welcome to<br /><span>Farrel Quest.</span></h1>
+          <p>I’m Navi—your guide to Farrel’s projects, product leadership, and AI-powered QA work.</p>
+          <button className="welcome-button" type="button" onClick={onEnter} autoFocus>
+            Begin the quest <FaArrowRight />
+          </button>
+          <button className="welcome-skip" type="button" onClick={onEnter}>Skip intro</button>
+          <small>Press Esc to skip</small>
+        </Motion.div>
+      </div>
+    </Motion.section>
+  );
+}
+
 function App() {
+  const [showWelcome, setShowWelcome] = useState(true);
+
   useEffect(() => {
     document.documentElement.classList.add("js");
     return () => document.documentElement.classList.remove("js");
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = showWelcome ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showWelcome]);
 
   return (
     <>
       <Navbar />
       <main><Hero /><Profile /><Projects /><Journey /><Skills /><Contact /></main>
       <footer className="site-footer"><span>© 2026 Muhammad Farrel Nayaka</span><span>Designed as an original product adventure.</span></footer>
+      <AnimatePresence>{showWelcome && <WelcomeScene onEnter={() => setShowWelcome(false)} />}</AnimatePresence>
     </>
   );
 }

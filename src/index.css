@@ -466,6 +466,48 @@ h1 span, h2 span { color: var(--blue); }
 .socials a:hover { color: var(--ink); background: var(--yellow); border-color: var(--ink); }
 .site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 22px max(5vw, calc((100vw - 1180px)/2)); color: #7c899d; background: #10192b; font-size: .7rem; }
 
+.welcome-scene {
+  position: fixed;
+  z-index: 600;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: white;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(58,91,228,.25), transparent 29%),
+    radial-gradient(circle at 17% 18%, rgba(85,231,242,.11), transparent 21%),
+    #050916;
+}
+.welcome-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .3;
+  background-image:
+    linear-gradient(rgba(121,154,222,.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121,154,222,.09) 1px, transparent 1px);
+  background-size: 38px 38px;
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 74%);
+  mask-image: radial-gradient(circle at center, black, transparent 74%);
+}
+.welcome-content { position: relative; z-index: 2; display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; width: min(940px, calc(100% - 48px)); }
+.welcome-mascot { position: relative; z-index: 2; }
+.welcome-mascot::before { content: ""; position: absolute; z-index: -1; inset: 10% 3% 8%; border-radius: 50%; background: radial-gradient(circle, rgba(85,231,242,.25), rgba(80,100,255,.08) 58%, transparent 70%); filter: blur(12px); }
+.welcome-mascot img { display: block; width: min(430px, 100%); margin: auto; filter: drop-shadow(0 30px 24px rgba(0,0,0,.48)) drop-shadow(0 0 38px rgba(85,231,242,.16)); }
+.welcome-copy { max-width: 500px; }
+.welcome-copy > p:first-child { margin-bottom: 14px; color: var(--cyan); font-size: .66rem; font-weight: 800; letter-spacing: .17em; }
+.welcome-copy h1 { margin-bottom: 17px; font-size: clamp(3.4rem, 7vw, 6rem); }
+.welcome-copy h1 span { color: var(--cyan); text-shadow: 0 0 24px rgba(85,231,242,.22); }
+.welcome-copy > p:not(:first-child) { max-width: 430px; margin-bottom: 27px; color: #a8b9d2; line-height: 1.7; }
+.welcome-button { display: inline-flex; align-items: center; gap: 10px; padding: 15px 20px; color: #07101f; border: 2px solid #b4fbff; border-radius: 15px; background: var(--cyan); box-shadow: 0 0 25px rgba(85,231,242,.28), 5px 5px 0 #1c2850; cursor: pointer; font-weight: 800; transition: transform .2s ease, background .2s ease; }
+.welcome-button:hover, .welcome-button:focus-visible { transform: translateY(-3px); background: white; outline: none; }
+.welcome-skip { display: block; margin: 20px 0 7px; padding: 4px 0; color: #91a5c1; border: 0; border-bottom: 1px solid transparent; background: transparent; cursor: pointer; font-size: .72rem; font-weight: 700; }
+.welcome-skip:hover, .welcome-skip:focus-visible { color: white; border-color: var(--cyan); outline: none; }
+.welcome-copy small { color: #647692; font-size: .63rem; }
+.welcome-orbit { position: absolute; left: 50%; top: 50%; border: 1px solid rgba(85,231,242,.2); border-radius: 50%; pointer-events: none; }
+.welcome-orbit-one { width: min(850px, 90vw); aspect-ratio: 1; margin: min(-425px, -45vw) 0 0 min(-425px, -45vw); }
+.welcome-orbit-two { width: min(610px, 70vw); aspect-ratio: 1; margin: min(-305px, -35vw) 0 0 min(-305px, -35vw); border-style: dashed; }
+
 /* Midnight Quest theme */
 :root {
   --ink: #edf5ff;
@@ -757,6 +799,13 @@ h1 span, h2 span { color: var(--cyan); text-shadow: 0 0 26px rgba(85,231,242,.2)
   .contact-orbit-one { width: 440px; height: 200px; margin: -100px 0 0 -220px; }
   .contact-orbit-two { width: 310px; height: 310px; margin: -155px 0 0 -155px; }
   .site-footer { display: grid; text-align: center; justify-content: center; }
+  .welcome-content { grid-template-columns: 1fr; width: min(430px, calc(100% - 40px)); text-align: center; }
+  .welcome-mascot { width: 260px; margin: 0 auto -7px; }
+  .welcome-copy { max-width: none; }
+  .welcome-copy h1 { font-size: clamp(3rem, 14vw, 4.3rem); }
+  .welcome-copy > p:not(:first-child) { margin-inline: auto; }
+  .welcome-button { width: 100%; justify-content: center; }
+  .welcome-skip { margin-inline: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
