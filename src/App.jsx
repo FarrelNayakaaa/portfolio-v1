@@ -527,45 +527,28 @@ function WelcomeScene({ onEnter }) {
     >
       <div className="welcome-grid" aria-hidden="true" />
       <div className={isOpening ? "welcome-gates is-opening" : "welcome-gates"} aria-hidden="true">
-        <div className="welcome-gate-door welcome-gate-left"><span /><span /><span /></div>
-        <div className="welcome-gate-door welcome-gate-right"><span /><span /><span /></div>
-        <div className="welcome-gate-arch"><i /><i /><b>FQ</b></div>
+        <div className="welcome-gate-door welcome-gate-left" />
+        <div className="welcome-gate-door welcome-gate-right" />
         <div className="welcome-gate-flash" />
       </div>
-      <Motion.div
-        className="welcome-orbit welcome-orbit-one"
-        animate={reduceMotion ? {} : { rotate: 360 }}
-        transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
-      />
-      <Motion.div
-        className="welcome-orbit welcome-orbit-two"
-        animate={reduceMotion ? {} : { rotate: -360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      />
-      <div className="welcome-content">
-        <Motion.div
-          className="welcome-mascot"
-          initial={reduceMotion ? false : { opacity: 0, y: 56, scale: .82 }}
-          animate={{ opacity: 1, y: reduceMotion ? 0 : [0, -13, 0], scale: 1 }}
-          transition={reduceMotion ? { duration: .01 } : { opacity: { duration: .6, delay: .12 }, scale: { duration: .7, delay: .12, type: "spring" }, y: { duration: 3.6, delay: .9, repeat: Infinity, ease: "easeInOut" } }}
+      <div className="welcome-lock-zone">
+        <Motion.button
+          className="welcome-lock"
+          type="button"
+          onClick={beginQuest}
+          autoFocus
+          disabled={isOpening}
+          aria-label="Unlock the gate and enter Farrel Quest"
+          initial={reduceMotion ? false : { opacity: 0, scale: .7 }}
+          animate={{ opacity: 1, scale: isOpening ? 1.25 : 1, y: reduceMotion || isOpening ? 0 : [0, -12, 0], rotate: isOpening ? 0 : [0, -2, 2, 0] }}
+          transition={reduceMotion ? { duration: .01 } : { opacity: { duration: .5 }, scale: { duration: .55, type: "spring" }, y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 4.2, repeat: Infinity, ease: "easeInOut" } }}
         >
-          <img src={mascot} alt="Navi, Farrel's project quest companion" width="900" height="900" />
-        </Motion.div>
-        <Motion.div
-          className="welcome-copy"
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: .55, delay: .32 }}
-        >
-          <p>QUEST TERMINAL · ONLINE</p>
-          <h1 id="welcome-title">Welcome to<br /><span>Farrel Quest.</span></h1>
-          <p>I’m Navi—your guide to Farrel’s projects, product leadership, and AI-powered QA work.</p>
-          <button className="welcome-button" type="button" onClick={beginQuest} autoFocus disabled={isOpening}>
-            {isOpening ? "Opening the gate..." : <>Begin the quest <FaArrowRight /></>}
-          </button>
-          <button className="welcome-skip" type="button" onClick={beginQuest}>Skip intro</button>
-          <small>Press Esc to skip</small>
-        </Motion.div>
+          <span className="lock-shackle" />
+          <span className="lock-body"><i /></span>
+        </Motion.button>
+        <p id="welcome-title">{isOpening ? "Opening the gate..." : "Click the key to enter"}</p>
+        <button className="welcome-skip" type="button" onClick={beginQuest}>Skip intro</button>
+        <small>Press Esc to skip</small>
       </div>
     </Motion.section>
   );

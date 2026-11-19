@@ -495,31 +495,32 @@ h1 span, h2 span { color: var(--blue); }
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 23vw;
-  min-width: 190px;
-  border: 1px solid rgba(95,161,223,.25);
-  background:
-    linear-gradient(90deg, rgba(8,17,35,.95), rgba(12,26,53,.68)),
-    repeating-linear-gradient(90deg, transparent 0 58px, rgba(85,231,242,.07) 59px 61px);
-  box-shadow: inset 0 0 70px rgba(17,64,121,.25), 0 0 35px rgba(85,231,242,.05);
+  width: 50%;
+  border: 1px solid rgba(95,161,223,.22);
+  background: linear-gradient(90deg, #071226, #0b1d3a);
+  box-shadow: inset 0 0 90px rgba(12,63,126,.22), 0 0 35px rgba(85,231,242,.05);
   transition: transform .82s cubic-bezier(.65,0,.35,1), opacity .45s ease;
 }
-.welcome-gate-left { left: 0; border-left: 0; border-radius: 0 24px 24px 0; transform-origin: left center; }
-.welcome-gate-right { right: 0; border-right: 0; border-radius: 24px 0 0 24px; transform-origin: right center; }
-.welcome-gate-door::before { content: ""; position: absolute; inset: 54px 17% 54px; border: 1px solid rgba(85,231,242,.18); border-radius: 16px; }
-.welcome-gate-door span { position: absolute; left: 20%; right: 20%; height: 1px; background: rgba(85,231,242,.25); box-shadow: 0 0 11px rgba(85,231,242,.25); }
-.welcome-gate-door span:nth-child(1) { top: 30%; }.welcome-gate-door span:nth-child(2) { top: 50%; }.welcome-gate-door span:nth-child(3) { top: 70%; }
-.welcome-gate-arch { position: absolute; z-index: 1; left: 50%; top: 50%; width: min(900px, 86vw); height: min(700px, 84vh); border: 1px solid rgba(85,231,242,.2); border-bottom: 0; border-radius: 450px 450px 0 0; transform: translate(-50%, -50%); box-shadow: inset 0 0 45px rgba(85,231,242,.04), 0 0 45px rgba(85,231,242,.07); transition: transform .82s cubic-bezier(.65,0,.35,1), opacity .45s ease; }
-.welcome-gate-arch::before, .welcome-gate-arch::after { content: ""; position: absolute; top: 26%; bottom: 0; width: 1px; background: linear-gradient(transparent, rgba(85,231,242,.34), transparent); }
-.welcome-gate-arch::before { left: 17%; }.welcome-gate-arch::after { right: 17%; }
-.welcome-gate-arch i { position: absolute; left: 50%; top: 11%; width: 58px; height: 58px; border: 1px solid rgba(85,231,242,.4); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 22px rgba(85,231,242,.22); }
-.welcome-gate-arch i::before, .welcome-gate-arch i::after { content: ""; position: absolute; left: 50%; top: 50%; width: 1px; height: 82px; background: rgba(85,231,242,.44); transform: translate(-50%, -50%); }.welcome-gate-arch i::after { transform: translate(-50%, -50%) rotate(90deg); }
-.welcome-gate-arch b { position: absolute; left: 50%; top: calc(11% + 16px); color: var(--cyan); transform: translateX(-50%); font: 700 .85rem "Fredoka"; letter-spacing: -.08em; }
+.welcome-gate-left { left: 0; border-left: 0; border-right-color: rgba(85,231,242,.34); transform-origin: left center; }
+.welcome-gate-right { right: 0; border-right: 0; border-left-color: rgba(85,231,242,.34); transform-origin: right center; }
+.welcome-gate-door::before { content: ""; position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(transparent, rgba(85,231,242,.55), transparent); box-shadow: 0 0 20px rgba(85,231,242,.35); }
+.welcome-gate-left::before { right: 0; }.welcome-gate-right::before { left: 0; }
 .welcome-gate-flash { position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at center, rgba(143,247,255,.75), rgba(85,231,242,.16) 28%, transparent 58%); transition: opacity .25s ease .36s; }
 .welcome-gates.is-opening .welcome-gate-left { transform: translateX(-105%) rotateY(24deg); opacity: 0; }
 .welcome-gates.is-opening .welcome-gate-right { transform: translateX(105%) rotateY(-24deg); opacity: 0; }
-.welcome-gates.is-opening .welcome-gate-arch { transform: translate(-50%, -50%) scale(1.12); opacity: 0; }
 .welcome-gates.is-opening .welcome-gate-flash { opacity: 1; }
+.welcome-lock-zone { position: relative; z-index: 3; display: grid; justify-items: center; gap: 9px; text-align: center; }
+.welcome-lock { position: relative; width: 164px; height: 106px; padding: 0; border: 0; background: transparent; cursor: pointer; filter: drop-shadow(0 0 20px rgba(85,231,242,.45)); }
+.welcome-lock:focus-visible { outline: none; filter: drop-shadow(0 0 29px rgba(85,231,242,.82)); }
+.welcome-lock:disabled { cursor: wait; }
+.lock-shackle { position: absolute; left: 10px; top: 21px; width: 58px; height: 58px; border: 5px solid var(--cyan); border-radius: 50%; box-shadow: 0 0 20px rgba(85,231,242,.6), inset 0 0 12px rgba(85,231,242,.28); }
+.lock-shackle::after { content: ""; position: absolute; inset: 15px; border-radius: 50%; background: #0a1831; box-shadow: 0 0 11px rgba(85,231,242,.22); }
+.lock-body { position: absolute; left: 59px; top: 46px; width: 92px; height: 14px; border: 2px solid #b9fbff; border-radius: 5px; background: var(--cyan); box-shadow: 0 0 21px rgba(85,231,242,.66); }
+.lock-body::before, .lock-body::after, .lock-body i { content: ""; position: absolute; bottom: -16px; width: 12px; height: 17px; border: 2px solid #b9fbff; border-top: 0; background: var(--cyan); }
+.lock-body::before { right: 11px; }.lock-body::after { right: 33px; }.lock-body i { right: 55px; }
+.welcome-lock-zone > p { margin: 0; color: #b5c8df; font: 700 .7rem "Fredoka"; letter-spacing: .08em; }
+.welcome-lock-zone .welcome-skip { margin: 10px 0 0; color: #7e94b1; }
+.welcome-lock-zone small { color: #627793; font-size: .62rem; }
 .welcome-content { position: relative; z-index: 2; display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; width: min(940px, calc(100% - 48px)); }
 .welcome-mascot { position: relative; z-index: 2; }
 .welcome-mascot::before { content: ""; position: absolute; z-index: -1; inset: 10% 3% 8%; border-radius: 50%; background: radial-gradient(circle, rgba(85,231,242,.25), rgba(80,100,255,.08) 58%, transparent 70%); filter: blur(12px); }
