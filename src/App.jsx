@@ -498,14 +498,21 @@ function Contact() {
 
 function WelcomeScene({ onEnter }) {
   const reduceMotion = useReducedMotion();
+  const [isOpening, setIsOpening] = useState(false);
+
+  const beginQuest = () => {
+    if (isOpening) return;
+    setIsOpening(true);
+    window.setTimeout(onEnter, reduceMotion ? 0 : 820);
+  };
 
   useEffect(() => {
     const skipWithEscape = (event) => {
-      if (event.key === "Escape") onEnter();
+      if (event.key === "Escape") beginQuest();
     };
     window.addEventListener("keydown", skipWithEscape);
     return () => window.removeEventListener("keydown", skipWithEscape);
-  }, [onEnter]);
+  });
 
   return (
     <Motion.section
@@ -519,6 +526,12 @@ function WelcomeScene({ onEnter }) {
       transition={{ duration: .45 }}
     >
       <div className="welcome-grid" aria-hidden="true" />
+      <div className={isOpening ? "welcome-gates is-opening" : "welcome-gates"} aria-hidden="true">
+        <div className="welcome-gate-door welcome-gate-left"><span /><span /><span /></div>
+        <div className="welcome-gate-door welcome-gate-right"><span /><span /><span /></div>
+        <div className="welcome-gate-arch"><i /><i /><b>FQ</b></div>
+        <div className="welcome-gate-flash" />
+      </div>
       <Motion.div
         className="welcome-orbit welcome-orbit-one"
         animate={reduceMotion ? {} : { rotate: 360 }}
@@ -547,10 +560,10 @@ function WelcomeScene({ onEnter }) {
           <p>QUEST TERMINAL · ONLINE</p>
           <h1 id="welcome-title">Welcome to<br /><span>Farrel Quest.</span></h1>
           <p>I’m Navi—your guide to Farrel’s projects, product leadership, and AI-powered QA work.</p>
-          <button className="welcome-button" type="button" onClick={onEnter} autoFocus>
-            Begin the quest <FaArrowRight />
+          <button className="welcome-button" type="button" onClick={beginQuest} autoFocus disabled={isOpening}>
+            {isOpening ? "Opening the gate..." : <>Begin the quest <FaArrowRight /></>}
           </button>
-          <button className="welcome-skip" type="button" onClick={onEnter}>Skip intro</button>
+          <button className="welcome-skip" type="button" onClick={beginQuest}>Skip intro</button>
           <small>Press Esc to skip</small>
         </Motion.div>
       </div>
