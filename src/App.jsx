@@ -93,9 +93,9 @@ function Hero() {
             </a>
           </div>
           <dl className="hero-stats">
-            <div><dt>7</dt><dd>people led</dd></div>
+            <div><dt>3</dt><dd>AI QA tiers built</dd></div>
             <div><dt>200+</dt><dd>ticket transactions</dd></div>
-            <div><dt>50+</dt><dd>bugs identified</dd></div>
+            <div><dt>50+</dt><dd>defects reported</dd></div>
           </dl>
         </Motion.div>
 

@@ -1,5 +1,18 @@
 export const projects = [
   {
+    title: "OpenAI × SEA",
+    role: "Web Developer & QA Automation",
+    type: "psychic",
+    typeLabel: "AI AUTOMATION",
+    summary: "Built a gamified technical-interview platform where an AI agent generates QA cases and follow-up test scenarios based on recruiter-selected bug types and difficulty.",
+    metrics: [{ value: "3", label: "difficulty tiers" }, { value: "E2E", label: "API validation" }],
+    skills: ["AI-Assisted QA", "Python", "API Automation", "React", "E2E Testing"],
+    challenge: "Create a technical interview experience that evaluates QA reasoning and AI collaboration—not only whether an answer is correct.",
+    moves: ["Built the gamified interview flow", "Integrated AI-generated QA cases", "Automated API checks and verified frontend-to-backend data sync"],
+    outcome: "Recruiters can tune each challenge by bug type and difficulty while candidates are assessed on how they use an in-product AI assistant to solve QA cases.",
+    link: "",
+  },
+  {
     title: "Waverly",
     role: "Project Manager · Web3 Hackathon",
     type: "electric",
@@ -27,15 +40,15 @@ export const projects = [
   },
   {
     title: "My Lawson Revamp",
-    role: "Quality Assurance Intern",
+    role: "Quality Assurance Intern · PT Global Loyalty Indonesia (Alfagift)",
     type: "grass",
     typeLabel: "QUALITY",
-    summary: "Owned staging validation, test planning, API and database checks, regression cycles, and build distribution across two major releases.",
-    metrics: [{ value: "50–100", label: "test scenarios" }, { value: "50+", label: "bugs found" }],
-    skills: ["Qase", "Jira", "Postman", "TestFlight"],
-    challenge: "Protect release quality across mobile flows, APIs, databases, and a changing staging environment.",
-    moves: ["Built structured test suites", "Validated APIs and data", "Managed regression and build distribution"],
-    outcome: "Identified 50+ issues across two major releases while supporting staging readiness end to end.",
+    summary: "Tested My Lawson Revamp across iOS, Android, and web—covering functional, regression, smoke, API, UAT, and SLT across two major Promo-team releases.",
+    metrics: [{ value: "2", label: "major releases" }, { value: "50+", label: "defects reported" }],
+    skills: ["Qase", "Jira", "Postman", "DBeaver", "MongoDB", "Redis Insight", "TestFlight"],
+    challenge: "Protect release quality across mobile, web, APIs, databases, and a staging environment with evolving business rules.",
+    moves: ["Wrote 50–100 test scenarios", "Validated API and data synchronization", "Owned staging data, build shipments, and beta-test closure"],
+    outcome: "Reported 50+ defects—including business-rule, API-response, database-to-app, and backoffice-to-app sync issues—and helped the team reach beta-check readiness faster.",
     link: "",
   },
   {
@@ -68,15 +81,16 @@ export const projects = [
 
 export const experience = [
   { role: "Project Manager", company: "Waverly Team · TEKNOFEST", period: "Apr 2026 — Present", description: "Leading product scope, milestones, and cross-functional alignment for a Web3 platform." },
-  { role: "Quality Assurance Intern", company: "PT Global Loyalty Indonesia", period: "Jan 2026 — Present", description: "Driving test planning, staging readiness, backend validation, and regression delivery for My Lawson Revamp." },
+  { role: "Quality Assurance Intern", company: "PT Global Loyalty Indonesia (Alfagift)", period: "Feb 2026 — Nov 2026", description: "Validated My Lawson Revamp across iOS, Android, and web; owned test scenarios, staging data, API/database checks, regression, and beta-test readiness across two major releases." },
   { role: "Technical Project Manager & Product Designer", company: "Starlight 2025", period: "Jan 2025 — Nov 2025", description: "Leading a seven-person team from requirements through deployment for a live ticketing platform." },
   { role: "Operating System Lab Assistant", company: "Multimedia Nusantara University", period: "Feb 2025 — Jul 2025", description: "Mentored 70+ students through systems fundamentals, debugging, and technical problem-solving." },
 ];
 
 export const skillGroups = [
   { icon: "01", kicker: "CORE TYPE", title: "Project Leadership", skills: ["Technical PM", "Agile / Scrum", "Roadmapping", "Risk Management", "Stakeholder Alignment"] },
-  { icon: "02", kicker: "SUPPORT TYPE", title: "Quality & Product", skills: ["Test Planning", "API Testing", "UX Research", "Figma", "Accessibility"] },
-  { icon: "03", kicker: "TECH TYPE", title: "Engineering Fluency", skills: ["JavaScript", "React", "Kotlin", "Python", "PostgreSQL", "MongoDB"] },
+  { icon: "02", kicker: "QUALITY TYPE", title: "Quality & Product", skills: ["Test Planning", "Regression Testing", "API Testing", "UAT / SLT", "Accessibility"] },
+  { icon: "03", kicker: "AUTOMATION TYPE", title: "AI & QA Automation", skills: ["AI-Assisted QA", "Python", "API Automation", "E2E Validation", "Prompt Design"] },
+  { icon: "04", kicker: "TECH TYPE", title: "Engineering Fluency", skills: ["JavaScript", "React", "Kotlin", "PostgreSQL", "MongoDB", "Redis"] },
 ];
 
 export const socialLinks = [

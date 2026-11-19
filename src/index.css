@@ -663,6 +663,27 @@ h1 span, h2 span { color: var(--cyan); text-shadow: 0 0 26px rgba(85,231,242,.2)
   .split-heading > p { margin-top: 20px; }
 }
 
+/* Tablet and split-screen Chrome can be narrower than a laptop while still using
+   desktop CSS. Keep complex case-study modals in their compact, stable layout. */
+@media (max-width: 1024px) and (min-width: 721px) {
+  .project-modal-backdrop { padding: 18px; }
+  .project-modal { left: 0; width: 100%; max-height: calc(100svh - 36px); overflow-y: auto; padding: 48px 28px 28px; }
+  .project-modal-header { display: grid; padding-right: 0; }
+  .project-modal-header dl { width: 100%; }
+  .project-modal-header dl div { flex: 1; min-width: 0; }
+  .project-story-flow { grid-template-columns: 1fr; gap: 9px; margin-top: 25px; }
+  .story-step { min-height: 0; }
+  .story-step > i { margin-bottom: 22px; }
+  .flow-connector { height: 20px; transform: rotate(90deg); }
+  .project-modal-footer { display: grid; }
+  .project-modal-footer > a { justify-self: stretch; justify-content: center; }
+  .project-peek-guide { display: none; }
+  .skill-modal { left: 0; width: min(700px, 100%); grid-template-columns: 1fr; gap: 5px; padding: 52px 28px 30px; }
+  .skill-constellation { width: 230px; margin: -25px auto 58px; }
+  .skill-guide-zone { left: -38px; top: 56px; width: 160px; height: 240px; opacity: .82; }
+  .skill-guide-bubble { left: 112px; top: 12px; }
+}
+
 @media (max-width: 720px) {
   .site-header { top: 10px; width: calc(100% - 20px); min-height: 58px; padding-block: 7px; border-radius: 17px; }
   .brand-mark { width: 36px; height: 36px; }
